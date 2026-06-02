@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import {
+const res = await fetch("https://api.anthropic.com/v1/messages", {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from "recharts";
 
@@ -328,9 +327,9 @@ function InputPage({ records }) {
   "rule_comment": "ルールベースコメント（50字以内）"
 }`;
 
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+     const res = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
-       headers: { "Content-Type": "application/json", "x-api-key": process.env.REACT_APP_ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "anthropic-dangerous-direct-browser-access": "true" },
+       headers: { "Content-Type": "application/json", "x-api-key": process.env.REACT_APP_ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "anthropic-dangerous-direct-browser-access": "true" }, "anthropic-dangerous-direct-browser-access": "true"
           model: "claude-sonnet-4-20250514",
           max_tokens: 1000,
           messages: [{ role: "user", content: prompt }]
